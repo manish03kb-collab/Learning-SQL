@@ -1,4 +1,4 @@
--- Active: 1779889906883@@127.0.0.1@3306@mysql
+-- Active: 1779973328849@@127.0.0.1@3306
 CREATE TABLE student (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     name TEXT,
@@ -52,3 +52,16 @@ ORDER BY price DESC;
 SELECT * FROM products
 ORDER BY price ASC LIMIT 4;
 SELECT * FROM products;
+SELECT city, COUNT(*)
+FROM customers
+GROUP BY city;
+SELECT SUM(quantity)
+FROM orders;
+SELECT name, price
+FROM products
+ORDER BY price ASC
+LIMIT 1;
+SELECT name, price
+FROM products
+WHERE price = (SELECT MIN(price) FROM products)
+LIMIT 1;
